@@ -4,15 +4,8 @@
 
 *
 {
-    font-family: 'Roboto',serif, sans-serif; /*Application de la police Roboto pour toutes éléments de la page si la police n'est pas trouvé par le navigateur
+    font-family: 'Roboto',serif, sans-serif; /*Application de la police Roboto pour tous les éléments de la page si la police n'est pas trouvé par le navigateur
     alors affichage des deux polices par défaut 'serif' et 'sans-serif'*/
-}
-
-    /*------------------------------------------Body------------------------------------------*/
-
-body
-{
-    /*background-color: green;*/
 }
 
     /*----------------------------Personnalisation des polices pour les balises h1, h2, h3, p et li----------------------------*/
@@ -21,26 +14,51 @@ h1
 {
     font-family: 'Shrikhand',serif, sans-serif; /*Application de la police Shrikhand pour les titres h1 si la police n'est pas trouvé par le navigateur
     alors affichage des deux polices par défaut 'serif' et 'sans-serif'*/
+    font-weight: bold;
 }
 
 h2
 {
     font-family: 'Shrikhand',serif, sans-serif; /*Application de la police Shrikhand pour les titres h2 si la police n'est pas trouvé par le navigateur
     alors affichage des deux polices par défaut 'serif' et 'sans-serif'*/
+    font-weight: bold;
+    font-size: 25px;
 }
 
 h3
 {
     font-family: 'Shrikhand',serif, sans-serif; /*Application de la police Shrikhand pour les titres h3 si la police n'est pas trouvé par le navigateur
     alors affichage des deux polices par défaut 'serif' et 'sans-serif'*/
+    font-weight: bold;
+    font-size: 20px;
+}
+
+p
+{
+    font-family: 'Roboto',serif, sans-serif;
+    font-size: 18px;
+}
+
+li
+{
+    font-family: 'Roboto',serif, sans-serif;
 }
 
     /*---------------------------------------------------------Header---------------------------------------------------------*/
 
 #titre_principal
 {
-    text-align: center;
-    /*background-color: aquamarine;*/
+    padding-top: 15px;
+    padding-bottom:15px;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo_ohmyfood
+{
+    width:200px;
 }
 
 #icone_et_paris_belleville_background
@@ -53,8 +71,7 @@ h3
 
 #icone_et_paris_belleville
 {
-    /*background-color: aqua;*/
-    width:130px;
+    width:180px;
     display:flex;
     flex-direction: row;
     justify-content: space-between;
@@ -71,6 +88,7 @@ h3
 {
     text-align: center;
     font-weight: bold;
+    font-size: 25px;
 }
 
 #paragraphe_decouvrez_des_restaurants
@@ -80,7 +98,6 @@ h3
 
 #bouton_explorer_conteneur
 {
-    /*background-color: chartreuse;*/
     display:flex;
     flex-direction:row;
     justify-content: space-around;
@@ -150,11 +167,22 @@ h3
 
 #fonctionnement
 {
-    padding-left: 20px;
+    padding-left: 40px;
     padding-right: 20px;
 }
 
-.fonctionnement_icone
+#fonctionnement_titre
+{
+    margin-left:-20px;
+}
+
+.fonctionnement_icone_1
+{
+    color: rgb(115,115,115);
+    margin-right: 35px;
+}
+
+.fonctionnement_icone_2_et_3
 {
     color: rgb(115,115,115);
     margin-right: 20px;
@@ -175,14 +203,129 @@ h3
     margin-left: -20px;
 }
 
+input::placeholder /*Utilisation du pseudo-élément ::placeholder sur les balises input pour modifier les attributs du paramètre placeholder dans le champ de texte*/
+{
+    color: black; /*Le texte dans le placeholder est de couleur noir*/
+    font-size: 18px;
+}
+
+#champ_recherche
+{
+    background-color: rgb(115,115,115);
+    border: none;
+    font-size: 18px;
+}
+
+#champ_recherche:focus
+{
+    outline: 3px solid #9356DC; /*Lorsque le champ de texte est sélectionné, un contour (différent de la bordure) s'affiche autour du champ de texte*/
+}
+
     /*---------------------------------------------------------Main---------------------------------------------------------*/
+
+main
+{
+    background-color:rgb(199,199,199);
+    padding-left:20px;
+    padding-right: 20px;
+    padding-top:20px;
+    padding-bottom: 40px;
+}
+
+.carte_image_et_corps
+{
+    background-color: white;
+    height: 300px;
+    margin-bottom: 20px;
+    border-radius: 30px 30px 30px 30px;
+    box-shadow: 3px 3px 3px rgb(115,115,115); /*Ombre grise appliquée sur la carte*/
+}
+
+.carte_image
+{
+    height:200px;
+}
+
+.carte_image img
+{
+    width:100%; /*L'image prend la largeur de son élément parent*/
+    height:100%; /*L'image prend la hauteur de son élément parent*/
+    object-fit: cover; /*L'image est dimensionnée pour maintenir son ratio d'affichage toute en remplissant toute la boîte de contenu*/
+}
+
+.carte_corps
+{
+    height: 100px;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#toutes_les_cartes a
+{
+    text-decoration: none;
+}
+
+.titre_carte
+{
+    font-weight: bold;
+}
+
+.carte_texte
+{
+    margin-left:20px;
+    color: black;
+}
+
+.carte_icone
+{
+    margin-right: 30px;
+}
+
+.carte_icone_coeur
+{
+    color: rgb(115,115,115);
+}
+
+.image_arrondie
+{
+    border-radius: 30px 30px 0px 0px;
+}
+
+.image_associee_a_element_vert
+{
+    position:relative; /*l'élément 'image_associee_a_element_vert' est définit en position relative pour pouvoir le postionner dans son conteneur
+    parent qui est .carte_image*/   
+}
+
+.element_vert
+{
+    background-color: #99E2D0;
+    color:green;
+    font-weight: bold;
+    border-radius: 5px 5px 5px 5px;
+    position:relative; /*l'élément 'element_vert' est définit en position relative pour pouvoir le postionner dans son conteneur parent qui est .carte_image*/
+    width:20%; /*L'élément a une largeur égale à 20% de la largeur de son élement parent .carte_image*/
+    height:15%; /*L'élément a une hauteur égale à 15% de la hauteur de son élement parent .carte_image*/
+    left: 76%; /*L'élément est décalé à droite de sa position initiale avec un décalage correspondant à 76% de la largeur de son élément parent .carte_image*/
+    bottom:92%; /*L'élément est décalé vers le haut de sa position initiale avec un décalage correspondant à 92% de la hauteur de son élément parent .carte_image*/
+    display:flex;
+    flex-direction: row; /*Permet de mettre l'élement <p> avec le texte 'Nouveau' sur une ligne à l'horizontal*/ 
+    justify-content: space-around; /*Centrage de l'élement <p> avec le texte 'Nouveau' sur l'axe principale horizontal*/
+    align-items: center; /*Centrage de l'élement <p> avec le texte 'Nouveau' sur l'axe secondaire vertical*/
+}
+
+.carte_icone_coeur:hover
+{
+    color: #9356DC;
+}
 
     /*---------------------------------------------------------Footer---------------------------------------------------------*/
 
 footer
 {
     background-color: rgb(61,61,61);
-    /*color: white;*/
     padding-top: 5px;
     padding-left: 20px;
     padding-bottom: 10px;
@@ -196,7 +339,7 @@ footer a
 
 footer a:hover
 {
-    color: blue;
+    color: #9356DC;
 }
 
 #liste_pied_de_page
@@ -207,14 +350,12 @@ footer a:hover
 
 #titre_footer
 {
-    /*background-color: blue;*/
     color: white;
 }
 
 #proposer_un_restaurant
 {
-    /*background-color: brown;*/
-    width: 190px;
+    width: 210px;
     height:30px;
     display: flex;
     flex-direction: row;
@@ -225,8 +366,7 @@ footer a:hover
 
 #devenir_partenaire
 {
-    /*background-color: violet;*/
-    width: 160px;
+    width: 172px;
     height: 30px;
     display: flex;
     flex-direction: row;
@@ -237,7 +377,6 @@ footer a:hover
 
 .mentions_legales_et_contact
 {
-    /*background-color: aqua;*/
     width: 150px;
     height: 30px;
     display: flex;
@@ -256,6 +395,34 @@ footer a:hover
 
     /*---------------------------------------------------------Header---------------------------------------------------------*/
 
+    #alignement_icone_texte
+    {
+        width:300px;
+    }
+
+    #alignement_icone_texte_2
+    {
+        width:300px;
+    }
+
+    #alignement_icone_texte_3
+    {
+        width:300px;
+    }
+
+    #fonctionnement_liste_de_choix
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .fonctionnement_icone_1
+    {
+        margin-right: 20px;
+    }
+
     /*---------------------------------------------------------Main---------------------------------------------------------*/
 
     /*---------------------------------------------------------Footer---------------------------------------------------------*/
@@ -270,6 +437,53 @@ footer a:hover
     /*---------------------------------------------------------Header---------------------------------------------------------*/
 
     /*---------------------------------------------------------Main---------------------------------------------------------*/
+
+    #alignement_icone_texte
+    {
+        width:300px;
+    }
+
+    #alignement_icone_texte_2
+    {
+        width:300px;
+    }
+
+    #alignement_icone_texte_3
+    {
+        width:300px;
+    }
+
+    #fonctionnement_liste_de_choix
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .fonctionnement_icone_1
+    {
+        margin-right: 20px;
+    }
+
+    .carte_image_et_corps
+    {
+        width: 600px;        
+    }
+
+    #toutes_les_cartes
+    {
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+
+    }
+
+    .carte_image_et_corps
+    {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
 
     /*---------------------------------------------------------Footer---------------------------------------------------------*/
 

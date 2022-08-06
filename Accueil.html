@@ -23,13 +23,14 @@
     <body>
         <!--Entête-->   
         <header>
-            <div>
-                <h1 id="titre_principal">ohmyfood</h1>
-                <div>
+            <div id="titre_principal_et_formulaire">
+                <div id="titre_principal"><img src="images/Logo_ohmyfood.png" alt="Logo ohmyfood" id="logo_ohmyfood"/></div>
+                <!--Partie formulaire-->
+                <form method="post" action="#">
                     <div id="icone_et_paris_belleville_background">
                         <div id="icone_et_paris_belleville">
                             <p><i class="fa fa-map-pin"></i></p>
-                            <p>Paris, Belleville</p>
+                            <p><input type="text" name="recherche_localisation" placeholder="Paris, Belleville" size="12" id="champ_recherche" /></p>
                         </div>
                     </div>
                     <div id="texte_menu_et_bouton_explorer_background">
@@ -37,33 +38,129 @@
                         <p id="paragraphe_decouvrez_des_restaurants">Découvrez des restaurants d'exception,<br />sélectionnés par nos soins.</p>
                         <div id="bouton_explorer_conteneur"><button type="submit" id="bouton_explorer">Explorer nos restaurants</button></div>
                     </div>
-                </div>
+                </form>
             </div>
+            <!--Partie fonctionnement avec 3 liens-->
             <div id="fonctionnement">
-                <h2>fonctionnement</h2>
+                <h2 id="fonctionnement_titre">Fonctionnement</h2>
                 <ul id="fonctionnement_liste_de_choix">
-                    <li><a href="#"><div id="alignement_icone_texte"><div class="fonctionnement_numero"><p>1</p></div><p><i class="fa fa-mobile fa-3x fonctionnement_icone"></i></p><p>Choisissez un restaurant</p></div></a></li>
-                    <li><a href="#"><div id="alignement_icone_texte_2"><div class="fonctionnement_numero"><p>2</p></div><p><i class="fa fa-list-ul fa-2x fonctionnement_icone"></i></p><p>Composez votre menu</p></div></a></li>
-                    <li><a href="#"><div id="alignement_icone_texte_3"><div class="fonctionnement_numero"><p>3</p></div><p><i class="fa fa-window-maximize fa-2x fonctionnement_icone"></i></p><p>Dégustez au restaurant</p></div></a></li>
+                    <li>
+                        <a href="#">
+                            <div id="alignement_icone_texte">
+                                <div class="fonctionnement_numero">
+                                    <p>1</p>
+                                </div>
+                                <p><i class="fa fa-mobile fa-2x fonctionnement_icone_1"></i></p>
+                                <p>Choisissez un restaurant</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div id="alignement_icone_texte_2">
+                                <div class="fonctionnement_numero">
+                                    <p>2</p>
+                                </div>
+                                <p><i class="fa fa-list-ul fa-2x fonctionnement_icone_2_et_3"></i></p>
+                                <p>Composez votre menu</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div id="alignement_icone_texte_3">
+                                <div class="fonctionnement_numero">
+                                    <p>3</p>
+                                </div>
+                                <p><i class="fa fa-window-maximize fa-2x fonctionnement_icone_2_et_3"></i></p>
+                                <p>Dégustez au restaurant</p>
+                            </div>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </header>
         <!--Contenu principal de la page-->
         <main>
             <h2>Restaurants</h2>
-            <div>
-                <div>
-
-                </div>
-                <div>
-                    
-                </div>
-                <div>
-                    
-                </div>
-                <div>
-                    
-                </div>
+            <!--Les 4 cartes de restaurant-->
+            <div id="toutes_les_cartes">
+                <!--Carte 1: La palette du goût-->
+                <a href="Menu_la_palette_du_gout.html">
+                    <!--Conteneur de l'image et du corps de la carte--> 
+                    <div class="carte_image_et_corps">
+                        <!--Image de la carte-->
+                        <div class="carte_image"><img src="images/La_palette_du_gout.jpg" alt="La palette du goût" class="image_arrondie image_associee_a_element_vert"/><div class="element_vert"><p>Nouveau</p></div></div>
+                        <!--Corps de la carte-->
+                        <div class="carte_corps">
+                            <!--Texte de la carte-->
+                            <div class="carte_texte">
+                                <p><span class="titre_carte">La palette du goût</span><br />Ménilmontant</p>
+                            </div>
+                            <!--Icone de la carte-->
+                            <div class="carte_icone">
+                                <i class="fa fa-heart fa-2x carte_icone_coeur"></i>
+                            </div>
+                        </div>
+                    </div>    
+                </a>
+                <!--Carte 2: La note enchantée-->
+                <a href="Menu_la_note_enchantee.html">
+                    <!--Conteneur de l'image et du corps de la carte--> 
+                    <div class="carte_image_et_corps">
+                        <!--Image de la carte-->
+                        <div class="carte_image"><img src="images/La_note_enchantee.jpg" alt="La note enchantée" class="image_arrondie image_associee_a_element_vert"/><div class="element_vert"><p>Nouveau</p></div></div>
+                        <!--Corps de la carte-->
+                        <div class="carte_corps">
+                            <!--Texte de la carte-->
+                            <div class="carte_texte">
+                                <p><span class="titre_carte">La note enchantée</span><br />Charonne</p>
+                            </div>
+                            <!--Icone de la carte-->
+                            <div class="carte_icone">
+                                <i class="fa fa-heart fa-2x carte_icone_coeur"></i>
+                            </div>
+                        </div>
+                    </div>    
+                </a>
+                <!--Carte 3: À la française-->
+                <a href="Menu_a_la_francaise.html">
+                    <!--Conteneur de l'image et du corps de la carte--> 
+                    <div class="carte_image_et_corps">
+                        <!--Image de la carte-->
+                        <div class="carte_image"><img src="images/A_la_francaise.jpg" alt="A la française" class="image_arrondie"/></div>
+                        <!--Corps de la carte-->
+                        <div class="carte_corps">
+                            <!--Texte de la carte-->
+                            <div class="carte_texte">
+                                <p><span class="titre_carte">À la française</span><br />Cité Rouge</p>
+                            </div>
+                            <!--Icone de la carte-->
+                            <div class="carte_icone">
+                                <i class="fa fa-heart fa-2x carte_icone_coeur"></i>
+                            </div>
+                        </div>
+                    </div>    
+                </a>
+                <!--Carte 4: Le délice des sens-->
+                <a href="Menu_le_delice_des_sens.html">
+                    <!--Conteneur de l'image et du corps de la carte--> 
+                    <div class="carte_image_et_corps">
+                        <!--Image de la carte-->
+                        <div class="carte_image"><img src="images/Le_delice_des_sens.jpg" alt="Le délice des sens" class="image_arrondie"/></div>
+                        <!--Corps de la carte-->
+                        <div class="carte_corps">
+                            <!--Texte de la carte-->
+                            <div class="carte_texte">
+                                <p><span class="titre_carte">Le délice des sens</span><br />Folie-Méricourt</p>
+                            </div>
+                            <!--Icone de la carte-->
+                            <div class="carte_icone">
+                                <i class="fa fa-heart fa-2x carte_icone_coeur"></i>
+                            </div>
+                        </div>
+                    </div>    
+                </a>
             <div>     
         </main>
         <!--Pied de page-->

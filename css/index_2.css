@@ -1,0 +1,328 @@
+/*---------------------------------------------------------PARTIE MOBILE---------------------------------------------------------*/
+
+/*--------------------------------------------------Police personnalisée Roboto sur tous les élements de texte--------------------------------------------------*/
+
+*
+{
+    font-family: 'Roboto',serif, sans-serif; /*Application de la police Roboto pour toutes éléments de la page si la police n'est pas trouvé par le navigateur
+    alors affichage des deux polices par défaut 'serif' et 'sans-serif'*/
+}
+       
+    /*----------------------------Personnalisation des polices pour les balises h1, h2, h3, p et li----------------------------*/
+    
+h1
+{
+    font-family: 'Shrikhand',serif, sans-serif; /*Application de la police Shrikhand pour les titres h1 si la police n'est pas trouvé par le navigateur
+    alors affichage des deux polices par défaut 'serif' et 'sans-serif'*/
+    font-weight: bold;
+}
+    
+h2
+{
+    font-family: 'Shrikhand',serif, sans-serif; /*Application de la police Shrikhand pour les titres h2 si la police n'est pas trouvé par le navigateur
+    alors affichage des deux polices par défaut 'serif' et 'sans-serif'*/
+    font-weight: bold;
+    font-size: 25px;
+}
+    
+h3
+{
+    font-family: 'Shrikhand',serif, sans-serif; /*Application de la police Shrikhand pour les titres h3 si la police n'est pas trouvé par le navigateur
+    alors affichage des deux polices par défaut 'serif' et 'sans-serif'*/
+    font-weight: bold;
+    font-size: 20px;
+}
+
+p
+{
+    font-family: 'Roboto',serif, sans-serif;
+    font-size: 18px;
+}
+
+li
+{
+    font-family: 'Roboto',serif, sans-serif;
+}
+
+    /*---------------------------------------------------------Header---------------------------------------------------------*/
+
+header
+{
+    position:relative; /*Les élements 'main' et 'header' sont définis en position relative pour pouvoir les supperposer ensuite*/
+    z-index:1;/*L'élément 'main' apparaitra au premier plan par rapport à l'élément 'header' définis lui aussi en position relative.
+    L'élement 'main' apparait au premier plan dans l'empilement car son z-index a une valeur supérieur au z-index de l'élément 'header' */
+}
+
+#titre_principal_et_fleche
+{
+    display: flex;
+    flex-direction: row; /*L'icone flèche et le titre 'ohmyfood' sont mis sur une même ligne*/
+    align-items: center; /*L'icone flèche et le titre 'ohmyfood' sont centrés sur l'axe secondaire vertical dans le conteneur*/
+    padding-top:15px;
+    padding-bottom:15px;
+}
+
+#conteneur_icone_fleche
+{
+    margin-left: 20px; /*L'icone flèche a une marge extérieure gauche de 20px par rapport à son conteneur*/    
+}
+
+#conteneur_icone_fleche a
+{
+    text-decoration: none;
+    color: black;
+}
+
+#conteneur_fleche
+{
+    flex:0.5; /*Grossissement de l'élement flexible 'conteneur_fleche' sur l'axe principal horizontal pour pousser l'élement flexible contenant le 
+    le titre 'ohmyfood' au centre de la page*/
+}
+
+#logo_ohmyfood
+{
+    width: 200px;
+}
+
+#conteneur_image_du_header
+{
+    height: 350px;
+}
+
+#conteneur_image_du_header img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*L'image est dimensionnée pour maintenir son ratio d'affichage toute en remplissant toute la boîte de contenu*/
+}
+
+    /*---------------------------------------------------------Main---------------------------------------------------------*/
+
+main
+{
+    background-color:rgb(199,199,199);
+    border-radius: 35px 35px 0px 0px;
+    padding-left:20px;
+    padding-right: 20px;
+    padding-top:40px;
+    padding-bottom: 40px;
+    position: relative; /*Les élements 'main' et 'header' sont définis en position relative pour pouvoir les supperposer ensuite*/
+    z-index:2; /*L'élément 'main' apparaitra au premier plan par rapport à l'élément 'header' définis lui aussi en position relative.
+    L'élement 'main' apparait au premier plan dans l'empilement car son z-index a une valeur supérieur au z-index de l'élément 'header' */
+    margin-top: -35px; /*L'élement 'main' a une marge extérieure haute négative pour permettre la supperposition avec l'élément 'header'*/
+}
+
+#titre_de_la_carte_et_icone_coeur
+{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.carte_icone_coeur
+{
+    color: white;
+}
+
+.liste_entrees_plats_desserts
+{
+    list-style-type: none;
+    padding-left: 0px; /*on enlève la marge intérieure gauche appliquée par défault sur une balise de type ul*/
+}
+
+.texte_presentation_et_prix
+{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom:20px;
+    border-radius: 20px 20px 20px 20px;
+}
+
+.barre_verte_entrees_plats_desserts
+{
+    border-bottom: 5px solid #99E2D0;
+    padding-bottom: 3px;
+}
+
+.prix_entrees_plats_desserts
+{
+    font-weight: bold;
+    padding-top:25px;
+    padding-right: 20px;
+}
+
+.texte_presentation
+{
+    font-weight: bold;
+    margin-left:10px;
+}
+
+.texte_presentation_2
+{
+    font-weight: normal;
+}
+
+#bouton_commander_conteneur
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#bouton_commander
+{
+    color:white;
+    background: linear-gradient(#FF79DA,#9356DC);
+    border: none;
+    width:200px;
+    height:50px;
+    border-radius: 30px 30px 30px 30px;
+}
+
+#bouton_commander:hover
+{
+    cursor:pointer; /*Lorsque le bouton est survolé, le pointer de la souris devient un pointeur avec une main*/
+}
+
+#formulaire_bouton_commander
+{
+    margin-top: 40px;
+}
+
+    /*---------------------------------------------------------Footer---------------------------------------------------------*/
+
+footer
+{
+    background-color: rgb(61,61,61);
+    padding-top: 5px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+}
+    
+footer a
+{
+    text-decoration: none;
+    color: white;
+}
+    
+footer a:hover
+{
+    color: #9356DC;
+}
+    
+#liste_pied_de_page
+{
+    list-style-type: none;
+    padding-left: 0px; /*on enlève la marge intérieure gauche appliquée par défault sur une balise de type ul*/
+}
+    
+#titre_footer
+{
+    color: white;
+}
+    
+#proposer_un_restaurant
+{
+    width: 210px;
+    height:30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color:white;
+}
+    
+#devenir_partenaire
+{
+    width: 172px;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color:white;
+}
+    
+.mentions_legales_et_contact
+{
+    width: 150px;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+    
+    /*-------------------------------------------------MEDIA QUERIES pour les formats tablette et mobile-------------------------------------------------*/
+   /*-----------------------------------------------------------------------------------------------------------------------------------------------------*/ 
+
+
+    /*---------------------------------------------------------PARTIE TABLETTE---------------------------------------------------------*/
+
+@media all and (min-width: 768px) and (max-width: 992px) /*Sur tous types d'écran, quand la largeur de la fenêtre est comprise entre 768px et 992px*/
+{
+    
+    /*---------------------------------------------------------Header---------------------------------------------------------*/
+
+    /*---------------------------------------------------------Main---------------------------------------------------------*/
+
+    .texte_presentation_et_prix
+    {
+        width: 400px;
+    }
+
+    .liste_entrees_plats_desserts
+    {
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    /*---------------------------------------------------------Footer---------------------------------------------------------*/
+
+}
+
+    /*---------------------------------------------------------PARTIE DESKTOP---------------------------------------------------------*/
+
+@media all and (min-width: 992px) /*Sur tous types d'écran, quand la largeur de la fenêtre fait au minimum 992px*/
+{
+    
+    /*---------------------------------------------------------Header---------------------------------------------------------*/
+    
+    /*---------------------------------------------------------Main---------------------------------------------------------*/
+
+    .texte_entrees_plats_desserts
+    {
+        text-align: center;
+    }
+
+    #titre_de_la_carte_et_icone_coeur
+    {
+        justify-content: end;
+    }
+
+    #titre_de_la_carte
+    {
+        flex:0.58;
+    }
+
+    .texte_presentation_et_prix
+    {
+        width: 400px;
+    }
+
+    .liste_entrees_plats_desserts
+    {
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    /*---------------------------------------------------------Footer---------------------------------------------------------*/
+
+}
