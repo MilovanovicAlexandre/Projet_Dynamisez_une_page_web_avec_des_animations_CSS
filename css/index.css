@@ -113,11 +113,18 @@ li
     width:200px;
     height:50px;
     border-radius: 30px 30px 30px 30px;
+    box-shadow: 5px 5px 5px rgb(115,115,115);
 }
 
 #bouton_explorer:hover
 {
     cursor:pointer; /*Lorsque le bouton est survolé, le pointer de la souris devient un pointeur avec une main*/
+    -webkit-filter: brightness(1.1); /*Propriété 'filter' préfixée pour les navigateurs Chrome, Safari, Android*/
+    -moz-filter: brightness(1.1); /*Propriété 'filter' préfixée pour le navigateur Mozilla*/
+    -o-filter: brightness(1.1); /*Propriété 'filter' préfixée pour le navigateur Opéra*/
+    -ms-filter: brightness(1.1); /*Propriété 'filter' préfixée pour le navigateur internet explorer*/
+    filter: brightness(1.1);
+    box-shadow: 5px 5px 0px rgb(115,115,115); /*Ombre sans adoucissement du dégradé définie à 0px*/
 }
 
 #alignement_icone_texte
