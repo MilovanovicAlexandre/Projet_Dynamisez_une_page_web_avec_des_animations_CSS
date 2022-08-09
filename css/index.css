@@ -290,11 +290,6 @@ main
     margin-right: 30px;
 }
 
-.carte_icone_coeur
-{
-    color: rgb(115,115,115);
-}
-
 .image_arrondie
 {
     border-radius: 30px 30px 0px 0px;
@@ -323,9 +318,26 @@ main
     align-items: center; /*Centrage de l'élement <p> avec le texte 'Nouveau' sur l'axe secondaire vertical*/
 }
 
+.carte_icone_coeur
+{
+    color: rgb(115,115,115);
+}
+
+@keyframes remplissage_coeur /*Keyframes pour l'animation consistant à remplir le coeur avec la couleur violet*/
+{
+    0%{ /*Début de l'animation*/
+        color: rgb(115,115,115);
+    }
+    100%{ /*Fin de l'animation*/
+        color: #9356DC;    
+    }
+} 
+
 .carte_icone_coeur:hover
 {
-    color: #9356DC;
+    animation: remplissage_coeur 10s; /*animation d'une durée de 10 secondes utilisant la keyframes 'remplissage_coeur'*/
+    animation-fill-mode: forwards; /*L'animation applique les styles à sa cible après son exécution, la cible de l'animation retiendra les 
+    valeurs calculées définies lors de la dernière étape keyframes, autrement dit à la fin de l'animation le coeur restera coloré en violet*/
 }
 
     /*---------------------------------------------------------Footer---------------------------------------------------------*/
