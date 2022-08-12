@@ -158,6 +158,49 @@ main
     border-radius: 20px 20px 20px 20px;
 }
 
+@keyframes apparition_progressive_des_plats /*Animation permettant l'apparition progressive avec des délais des entrées, des plats et des desserts*/
+{
+    0%{ /*Début de l'animation*/
+        opacity: 0; /*Au début de l'animation, l'entrée, le plat ou le dessert sont transparent*/    
+    }
+    100%{ /*Fin de l'animation*/
+        opacity: 1; /*A la fin de l'animation, l'entrée, le plat ou le dessert sont visibles*/
+    }
+}
+
+.liste_entrees_plats_desserts li:nth-child(1) /*Permet de sélectionner le premier élément d'entrée ou de plat ou de dessert*/
+{
+    opacity: 0; /*Au chargement de la page web l'élement est transparent*/
+    animation: apparition_progressive_des_plats 3s ease-in-out forwards; /*Animation avec la keyframes 'apparition_progressive_des_plats' d'une durée de 3 secondes
+    avec une courbe d'accélération-décélération ease-in-out. La propriété 'forwards' indique que l'élément entrée, plat ou dessert gardera en fin d'animation
+    la même transparence-opacité que celle défini à l'étape 100% de l'animation. Autrement dit, à la fin de l'animation l'entrée, le plat ou le dessert ont
+    une opacité valant 1 donc ils seront visibles sur la page web.*/
+}
+
+.liste_entrees_plats_desserts li:nth-child(2) /*Permet de sélectionner le deuxième élément d'entrée ou de plat ou de dessert*/
+{
+    opacity: 0;
+    animation: apparition_progressive_des_plats 3s 1s ease-in-out forwards; /*Animation avec la keyframes 'apparition_progressive_des_plats' avec ajout d'un délai
+    de 1 seconde avant le déclenchement de l'animation. Donc ce deuxième éléments entrée, plat ou dessert apparaitra avec un délai  de 1 seconde par rapport au premier
+    élement entrée, plat ou dessert*/
+}
+
+.liste_entrees_plats_desserts li:nth-child(3) /*Permet de sélectionner le troisième élément d'entrée ou de plat ou de dessert*/
+{
+    opacity: 0;
+    animation: apparition_progressive_des_plats 3s 2s ease-in-out forwards; /*Animation avec la keyframes 'apparition_progressive_des_plats' avec ajout d'un délai
+    de 2 secondes avant le déclenchement de l'animation. Donc ce troisième élément entrée, plat ou dessert apparaitra avec un délai de 2 secondes par rapport au premier
+    élement entrée, plat ou dessert*/
+}
+
+.liste_entrees_plats_desserts li:nth-child(4) /*Permet de sélectionner le quatrième élément d'entrée ou de plat ou de dessert*/
+{
+    opacity: 0;
+    animation: apparition_progressive_des_plats 3s 2.9s ease-in-out forwards; /*Animation avec la keyframes 'apparition_progressive_des_plats' avec ajout d'un délai
+    de 2.9 secondes avant le déclenchement de l'animation. Donc ce quatrième élément entrée, plat ou dessert apparaitra avec un délai de 2.9 secondes par rapport 
+    au premier élement entrée, plat ou dessert*/
+}
+
 .barre_verte_entrees_plats_desserts
 {
     border-bottom: 5px solid #99E2D0;
