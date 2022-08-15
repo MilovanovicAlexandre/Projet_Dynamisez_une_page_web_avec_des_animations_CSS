@@ -156,6 +156,12 @@ main
     align-items: center;
     margin-bottom:20px;
     border-radius: 20px 20px 20px 20px;
+    height: 80px;
+}
+
+.texte_presentation_et_prix:active
+{
+    cursor:pointer; /*Lorsque du clic sur une entrée, un plat ou un dessert le pointer de la souris devient un pointeur avec une main*/
 }
 
 @keyframes apparition_progressive_des_plats /*Animation permettant l'apparition progressive avec des délais des entrées, des plats et des desserts*/
@@ -212,6 +218,39 @@ main
     font-weight: bold;
     padding-top:25px;
     padding-right: 20px;
+}
+
+.conteneur_coche_ajout_du_plat
+{
+    transition: transform 1.5s ease-in-out;
+    transform-origin: right center;
+    transform:translateX(40px);
+    opacity: 0; /*Le conteneur vert avec la coche est masqué*/
+}
+
+.coche_ajout_du_plat
+{
+    background-color: white;
+    color: #99E2D0;
+    border-radius: 30px 30px 30px 30px;
+    width: 19px;
+    height: 19px;
+}
+
+.texte_presentation_et_prix:active .conteneur_coche_ajout_du_plat
+{
+    opacity: 1; /*Le conteneur vert avec la coche est visible*/
+    display: block;
+    width:80px;
+    height: 100%;
+    border-radius: 0px 20px 20px 0px;
+    background-color: #99E2D0;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transform:translateX(0px);
+    
 }
 
 .texte_presentation
