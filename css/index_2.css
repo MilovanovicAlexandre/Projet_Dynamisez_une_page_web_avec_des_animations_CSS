@@ -22,7 +22,7 @@ h2
     font-family: 'Shrikhand',serif, sans-serif; /*Application de la police Shrikhand pour les titres h2 si la police n'est pas trouvé par le navigateur
     alors affichage des deux polices par défaut 'serif' et 'sans-serif'*/
     font-weight: bold;
-    font-size: 25px;
+    font-size: 34px;
 }
     
 h3
@@ -36,7 +36,7 @@ h3
 p
 {
     font-family: 'Roboto',serif, sans-serif;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 li
@@ -117,6 +117,7 @@ main
     display:flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
 .carte_icone_coeur
@@ -147,16 +148,14 @@ main
     padding-left: 0px; /*on enlève la marge intérieure gauche appliquée par défault sur une balise de type ul*/
 }
 
-.texte_presentation_et_prix
+.texte_presentation_et_prix /*Conteneur d'une entrée, d'un plat ou d'un dessert*/
 {
     background-color: white;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom:20px;
-    border-radius: 20px 20px 20px 20px;
-    height: 80px;
+    margin-bottom:20px; /*Permet d'espacer un conteneur d'une entrée, d'un plat ou d'un dessert d'un autre conteneur*/ 
+    border-radius: 20px 20px 20px 20px; /*Arrondissement des angles du conteneur*/
+    height: 90px; /*Hauteur du conteneur d'une entrée, d'un plat ou d'un dessert*/
+    overflow: hidden; /*Les éléments qui dépassent de ce conteneur sont masqués. Cette propriété est utilisée pour masquer le conteneur de la
+    coche verte quand celui-ci est en dehors du conteneur*/
 }
 
 .texte_presentation_et_prix:active
@@ -207,7 +206,13 @@ main
     au premier élement entrée, plat ou dessert*/
 }
 
-.barre_verte_entrees_plats_desserts
+.texte_entrees_plats_desserts /*Selecteur sur les textes 'ENTREES', 'PLATS' et 'DESSERTS'*/
+{
+    padding-left: 10px; 
+    font-size: 22px;
+}
+
+.barre_verte_entrees_plats_desserts /*On met une barre verte en dessous de certaines lettres des textes 'ENTREES', 'PLATS', 'DESSERTS'*/
 {
     border-bottom: 5px solid #99E2D0;
     padding-bottom: 3px;
@@ -215,53 +220,110 @@ main
 
 .prix_entrees_plats_desserts
 {
+    transition: transform 0.2s ease-in-out; /*Transition sur la propriété 'transform', d'une durée de 0.2 secondes avec une courbe d'accélération/décélération
+    ease-in-out*/
+    transform:translateX(0px); /*On applique sur l'élément prix une translation horizontal de 0px. Cette translation correspond au paramètre initial de la
+    transition*/
+    font-size: 19px;
     font-weight: bold;
-    padding-top:25px;
-    padding-right: 20px;
 }
 
 .conteneur_coche_ajout_du_plat
 {
-    transition: transform 1.5s ease-in-out;
-    transform-origin: right center;
-    transform:translateX(40px);
-    opacity: 0; /*Le conteneur vert avec la coche est masqué*/
+    position: relative; /*L'élement est défini en position relative donc il est déplacé par rapport à sa position initiale dans le flux*/
+    left:100%; /*L'élément est positionné à droite de sa position initiale à une largeur valant 100% la largeur de son élément parent*/
+    width:70px; /*C'est la largeur de l'élément conteneur de la coche verte*/
+    height: 100%; /*La hauteur de l'élément vaut 100% la hauteur de son élement parent qui est '.texte_presentation_et_prix'*/
+    border-radius: 0px 20px 20px 0px; /*Le conteneur de la coche verte a ses bords droit arrondis*/
+    background-color: #99E2D0;
+    display:flex; /*Utilisation de flexbox pour center l'icone de la coche verte dans ce conteneur*/
+    flex-direction: row; /*L'icone de la coche verte est mis sur une ligne dans ce conteneur*/
+    justify-content: center; /*La coche verte est centrée dans le conteneur horizontalement*/
+    align-items: center; /*La coche verte est centrée dans le conteneur verticalement*/
+    transition: transform 0.2s ease-in-out; /*Transition sur la priopriété 'transform', d'une durée de 0.2 secondes avec une courbe d'accélération-décélération
+    de type ease-in-out*/
+    transform:translate(0px); /*L'élément conteneur de la coche verte est translaté horizontalement de 0px. Cette translation correspond au paramètre initial
+    de la transition*/
 }
 
 .coche_ajout_du_plat
 {
     background-color: white;
     color: #99E2D0;
-    border-radius: 30px 30px 30px 30px;
-    width: 19px;
-    height: 19px;
+    border-radius: 30px 30px 30px 30px; /*L'icone coche a des bords arrondis*/
+    width: 17px; /*Largeur de l'icone coche*/
+    height: 17px; /*Hauteur de l'icône coche*/
 }
 
-.texte_presentation_et_prix:active .conteneur_coche_ajout_du_plat
+.texte_complementaire_et_prix_element_de_menu
 {
-    opacity: 1; /*Le conteneur vert avec la coche est visible*/
-    display: block;
-    width:80px;
-    height: 100%;
-    border-radius: 0px 20px 20px 0px;
+    position:relative; /*L'élement est défini en position relative donc il est déplacé par rapport à sa position initiale dans le flux*/
+    bottom: 140%; /*L'élément est positionné en haut de sa position initiale à une hauteur valant 140% la hauteur de son élément parent*/
+    display:flex; /*Utilisation de flex, le texte complémentaire et le prix sont mis sur une même ligne*/
+    justify-content: space-between; /*Le texte complémentaire et le prix sont espacé sur l'axe principal horizontal*/
+    padding-left: 15px; /*Permet de positionner le texte complémentaire*/
+    padding-right: 25px; /*Permet de positionner l'élément prix*/
+}
+
+.texte_presentation_et_prix:active .conteneur_coche_ajout_du_plat /*Lors du clic sur une entrée, un plat ou un dessert, on applique sur l'élement contenant la*/
+{/*coche verte les propriétés CSS ci-dessous: */
+    width:70px;
+    height: 100%; /*L'élément contenant la coche verte a une hauteur valant 100% celle de son élément parent*/
+    border-radius: 0px 20px 20px 0px;  /*L'élément a ses bords droit arrondis*/
     background-color: #99E2D0;
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    transform:translateX(0px);
-    
+    display:flex; /*Utilisation de flexbox pour centrer l'icone de la coche verte dans ce conteneur*/
+    flex-direction: row; /*Flexbox en horizontal pour les élements*/
+    justify-content: center; /*Alignement de l'icone coche horizontalement dans le conteneur*/
+    align-items: center; /*Alignement de l'icone coche verticalement dans le conteneur*/
+    transform:translateX(-70px); /*L'élément est translaté à -70 pixels sur l'axe horizontal lors de la transition. Ainsi avec cette transition au clic sur une entrée,
+    un plat ou un dessert on a l'élément conteneur de la coche verte qui apparait à droite du conteneur '.texte_presentation_et_prix'*/
 }
 
-.texte_presentation
+.conteneur_coche_ajout_du_plat i /*Sélection des icônes cases à cocher*/
 {
+    transition: transform 0.4s ease-in-out; /*Transition sur la priopriété 'transform', d'une durée de 0.4 secondes avec une courbe d'accélération-décélération
+    de type ease-in-out*/ 
+    transform: rotate(0deg); /*L'élément icône case à cocher a une rotation de 0 degré. Cette rotation correspond au paramètre initial
+    de la transition*/
+}
+
+.texte_presentation_et_prix:active i /*Lors du clic sur une entrée, un plat, ou un dessert, on applique sur l'élément icône case à cocher*/
+{/*Les propriétés CSS ci-dessous:*/
+    transform: rotate(360deg); /*L'élément a une rotation de 360 degrés lors de la transition. Ainsi avec cette transition au clic sur une entrée,
+    un plat ou un dessert on a l'élément icône de la coche verte qui tourne dans son conteneur '.conteneur_coche_ajout_du_plat'*/
+}
+
+.texte_presentation_et_prix:active .prix_entrees_plats_desserts /*Lors du clic sur une entrée, un plat, ou un dessert, on applique sur l'élement contenant le prix*/
+{ /*Les propriété CSS ci-dessous:*/
+    transform: translateX(-70px); /*Durant la transition, l'élément du prix est translaté horizontalement de -70 pixels pour permettre au conteneur de la coche verte
+    d'apparaitre sans se chevaucher avec l'élément prix dans l'élément '.texte_presentation_et_prix'*/
+}
+
+.titre_element_de_menu /*Selecteur du titre d'un élément du menu, il peut s'agir du titre d'une entrée, d'un plat ou d'un dessert*/
+{
+    position:relative; /*L'élement est défini en position relative donc il est déplacé par rapport à sa position initiale dans le flux*/
+    bottom: 110%; /*L'élément est positionné en haut de sa position initiale à une hauteur valant 110% la hauteur de son élément parent*/
+}
+
+.texte_presentation /*Sélecteur sur le titre d'une entrée, d'un plat ou d'un dessert*/
+{
+    margin-left: 15px;
+    font-size: 22px;
     font-weight: bold;
-    margin-left:10px;
 }
 
-.texte_presentation_2
+.texte_presentation_et_prix:active .texte_presentation_2 /*Lors du clic sur une entrée, un plat, ou un dessert, on applique sur l'élement de présentation 2 d'une*/
+{/*entrée, d'un plat ou d'un dessert, les propriétés CSS ci-dessous:*/
+    white-space: nowrap; /*Suppression du passage à la ligne automatique pour le texte*/
+    overflow: hidden; /*Si le texte dépasse du bloc alors le texte est caché*/
+    text-overflow: ellipsis; /*Une ellipse '...' est affichée  pour représenter le texte rogné quand celui-ci dépasse de son conteneur*/
+    margin-right: 80px; /*L'élément de présentation 2 a une marge extérieure droite de 80px permettant lors du clic sur une entrée, un plat ou un dessert de
+    reduire le texte affiché de l'élement présentation 2 et de mettre une ellipse à la place du texte qui n'est pas affiché*/
+}
+
+.texte_presentation_2 /*Sélecteur du texte de présentation 2 d'une entrée, d'un plat ou d'un dessert*/
 {
-    font-weight: normal;
+    font-size: 19px;   
 }
 
 #bouton_commander_conteneur
@@ -333,7 +395,7 @@ footer a:hover
     
 #proposer_un_restaurant
 {
-    width: 210px;
+    width: 190px;
     height:30px;
     display: flex;
     flex-direction: row;
@@ -344,7 +406,7 @@ footer a:hover
     
 #devenir_partenaire
 {
-    width: 172px;
+    width: 156px;
     height: 30px;
     display: flex;
     flex-direction: row;
@@ -377,7 +439,7 @@ footer a:hover
 
     .texte_presentation_et_prix
     {
-        width: 400px;
+        width: 450px;
     }
 
     .liste_entrees_plats_desserts
@@ -418,7 +480,7 @@ footer a:hover
 
     .texte_presentation_et_prix
     {
-        width: 400px;
+        width: 450px;
     }
 
     .liste_entrees_plats_desserts
