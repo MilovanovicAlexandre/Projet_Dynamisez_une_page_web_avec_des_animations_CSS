@@ -63,7 +63,8 @@ li
 
 #icone_et_paris_belleville_background
 {
-    background-color: rgb(115,115,115);
+    background-color: #eaeaea;
+    /*background-color: rgb(115,115,115);*/
     display:flex;
     flex-direction:row;
     justify-content: space-around;
@@ -80,7 +81,7 @@ li
 
 #texte_menu_et_bouton_explorer_background
 {
-    background-color:rgb(199,199,199);
+    background-color: #f6f6f6;
     padding-top:20px;
 }
 
@@ -93,6 +94,7 @@ li
 
 #paragraphe_decouvrez_des_restaurants
 {
+    color: #6b6b6b;
     text-align: center;
 }
 
@@ -129,7 +131,7 @@ li
 
 #alignement_icone_texte
 {
-    background-color:rgb(199,199,199);
+    background-color: #f6f6f6;
     display:flex;
     flex-direction: row;
     align-items: center;
@@ -140,7 +142,7 @@ li
 
 #alignement_icone_texte_2
 {
-    background-color:rgb(199,199,199);
+    background-color:#f6f6f6;
     display:flex;
     flex-direction: row;
     align-items: center;
@@ -151,7 +153,7 @@ li
 
 #alignement_icone_texte_3
 {
-    background-color:rgb(199,199,199);
+    background-color:#f6f6f6;
     display:flex;
     flex-direction: row;
     align-items: center;
@@ -218,7 +220,7 @@ input::placeholder /*Utilisation du pseudo-élément ::placeholder sur les balis
 
 #champ_recherche
 {
-    background-color: rgb(115,115,115);
+    background-color: #eaeaea;
     border: none;
     font-size: 18px;
 }
@@ -232,7 +234,7 @@ input::placeholder /*Utilisation du pseudo-élément ::placeholder sur les balis
 
 main
 {
-    background-color:rgb(199,199,199);
+    background-color: #f6f6f6;
     padding-left:20px;
     padding-right: 20px;
     padding-top:20px;
@@ -257,7 +259,7 @@ main
 {
     width:100%; /*L'image prend la largeur de son élément parent*/
     height:100%; /*L'image prend la hauteur de son élément parent*/
-    object-fit: cover; /*L'image est dimensionnée pour maintenir son ratio d'affichage toute en remplissant toute la boîte de contenu*/
+    /*object-fit: cover; L'image est dimensionnée pour maintenir son ratio d'affichage toute en remplissant toute la boîte de contenu*/
 }
 
 .carte_corps
@@ -309,14 +311,14 @@ main
 .element_vert
 {
     background-color: #99E2D0;
-    color:green;
+    color: #1b9779;
     font-weight: bold;
-    border-radius: 5px 5px 5px 5px;
+    border-radius: 3px 3px 3px 3px;
     position:relative; /*l'élément 'element_vert' est définit en position relative pour pouvoir le postionner dans son conteneur parent qui est .carte_image*/
-    width:20%; /*L'élément a une largeur égale à 20% de la largeur de son élement parent .carte_image*/
-    height:15%; /*L'élément a une hauteur égale à 15% de la hauteur de son élement parent .carte_image*/
-    left: 76%; /*L'élément est décalé à droite de sa position initiale avec un décalage correspondant à 76% de la largeur de son élément parent .carte_image*/
-    bottom:92%; /*L'élément est décalé vers le haut de sa position initiale avec un décalage correspondant à 92% de la hauteur de son élément parent .carte_image*/
+    width:22%; /*L'élément a une largeur égale à 20% de la largeur de son élement parent .carte_image*/
+    height:17%; /*L'élément a une hauteur égale à 17% de la hauteur de son élement parent .carte_image*/
+    left: 74%; /*L'élément est décalé à droite de sa position initiale avec un décalage correspondant à 74% de la largeur de son élément parent .carte_image*/
+    bottom:95%; /*L'élément est décalé vers le haut de sa position initiale avec un décalage correspondant à 95% de la hauteur de son élément parent .carte_image*/
     display:flex;
     flex-direction: row; /*Permet de mettre l'élement <p> avec le texte 'Nouveau' sur une ligne à l'horizontal*/ 
     justify-content: space-around; /*Centrage de l'élement <p> avec le texte 'Nouveau' sur l'axe principale horizontal*/
@@ -325,13 +327,16 @@ main
 
 .carte_icone_coeur
 {
-    color: rgb(115,115,115);
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width:thin;
+    /*color: rgb(115,115,115);*/
+    color:white;
 }
 
 @keyframes remplissage_coeur /*Keyframes pour l'animation consistant à remplir le coeur avec la couleur violet*/
 {
     0%{ /*Début de l'animation*/
-        color: rgb(115,115,115);
+        color: white;
     }
     100%{ /*Fin de l'animation*/
         color: #9356DC;    
@@ -349,7 +354,7 @@ main
 
 footer
 {
-    background-color: rgb(61,61,61);
+    background-color: #353535;
     padding-top: 5px;
     padding-left: 20px;
     padding-bottom: 10px;

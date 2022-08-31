@@ -93,14 +93,14 @@ header
 {
     width: 100%;
     height: 100%;
-    object-fit: cover; /*L'image est dimensionnée pour maintenir son ratio d'affichage toute en remplissant toute la boîte de contenu*/
+    /*object-fit: cover; L'image est dimensionnée pour maintenir son ratio d'affichage toute en remplissant toute la boîte de contenu*/
 }
 
     /*---------------------------------------------------------Main---------------------------------------------------------*/
 
 main
 {
-    background-color:rgb(199,199,199);
+    background-color: #f6f6f6;
     border-radius: 35px 35px 0px 0px;
     padding-left:20px;
     padding-right: 20px;
@@ -122,13 +122,15 @@ main
 
 .carte_icone_coeur
 {
-    color: white;
+    -webkit-text-stroke-color: black; /*Contour de l'icône coeur en noir*/
+    -webkit-text-stroke-width:thin; /*Epaisseur du contour de l'icône coeur*/
+    color: #f6f6f6;
 }
 
 @keyframes remplissage_coeur /*Keyframes pour l'animation consistant à remplir le coeur avec la couleur violet*/
 {
     0%{ /*Début de l'animation*/
-        color: white;
+        color: #f6f6f6;
     }
     100%{ /*Fin de l'animation*/
         color: #9356DC;    
@@ -258,7 +260,7 @@ main
 .texte_complementaire_et_prix_element_de_menu
 {
     position:relative; /*L'élement est défini en position relative donc il est déplacé par rapport à sa position initiale dans le flux*/
-    bottom: 140%; /*L'élément est positionné en haut de sa position initiale à une hauteur valant 140% la hauteur de son élément parent*/
+    bottom: 150%; /*L'élément est positionné en haut de sa position initiale à une hauteur valant 150% la hauteur de son élément parent*/
     display:flex; /*Utilisation de flex, le texte complémentaire et le prix sont mis sur une même ligne*/
     justify-content: space-between; /*Le texte complémentaire et le prix sont espacé sur l'axe principal horizontal*/
     padding-left: 15px; /*Permet de positionner le texte complémentaire*/
@@ -308,7 +310,7 @@ main
 .texte_presentation /*Sélecteur sur le titre d'une entrée, d'un plat ou d'un dessert*/
 {
     margin-left: 15px;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
 }
 
@@ -365,7 +367,7 @@ main
 
 footer
 {
-    background-color: rgb(61,61,61);
+    background-color: #353535;
     padding-top: 5px;
     padding-left: 20px;
     padding-bottom: 10px;
